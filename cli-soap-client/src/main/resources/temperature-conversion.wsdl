@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:sch="http://www.one-inside.com/blog/soapserver/gen" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.one-inside.com/blog/soapserver/gen" targetNamespace="http://www.one-inside.com/blog/soapserver/gen">
+    <wsdl:types>
+        <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.one-inside.com/blog/soapserver/gen">
+
+            <xs:element name="convertCelsiusToFahrenheitRequest">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="celsius" type="xs:float"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="convertCelsiusToFahrenheitResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="fahrenheit" type="xs:float"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+
+            <xs:element name="convertFahrenheitToCelsiusRequest">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="fahrenheit" type="xs:float"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="convertFahrenheitToCelsiusResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="celsius" type="xs:float"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:message name="convertCelsiusToFahrenheitResponse">
+        <wsdl:part element="tns:convertCelsiusToFahrenheitResponse" name="convertCelsiusToFahrenheitResponse">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="convertFahrenheitToCelsiusResponse">
+        <wsdl:part element="tns:convertFahrenheitToCelsiusResponse" name="convertFahrenheitToCelsiusResponse">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="convertCelsiusToFahrenheitRequest">
+        <wsdl:part element="tns:convertCelsiusToFahrenheitRequest" name="convertCelsiusToFahrenheitRequest">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="convertFahrenheitToCelsiusRequest">
+        <wsdl:part element="tns:convertFahrenheitToCelsiusRequest" name="convertFahrenheitToCelsiusRequest">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:portType name="TemperatureConversionPort">
+        <wsdl:operation name="convertCelsiusToFahrenheit">
+            <wsdl:input message="tns:convertCelsiusToFahrenheitRequest" name="convertCelsiusToFahrenheitRequest">
+            </wsdl:input>
+            <wsdl:output message="tns:convertCelsiusToFahrenheitResponse" name="convertCelsiusToFahrenheitResponse">
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="convertFahrenheitToCelsius">
+            <wsdl:input message="tns:convertFahrenheitToCelsiusRequest" name="convertFahrenheitToCelsiusRequest">
+            </wsdl:input>
+            <wsdl:output message="tns:convertFahrenheitToCelsiusResponse" name="convertFahrenheitToCelsiusResponse">
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="TemperatureConversionPortSoap11" type="tns:TemperatureConversionPort">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="convertCelsiusToFahrenheit">
+            <soap:operation soapAction=""/>
+            <wsdl:input name="convertCelsiusToFahrenheitRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="convertCelsiusToFahrenheitResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="convertFahrenheitToCelsius">
+            <soap:operation soapAction=""/>
+            <wsdl:input name="convertFahrenheitToCelsiusRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="convertFahrenheitToCelsiusResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="TemperatureConversionPortService">
+        <wsdl:port binding="tns:TemperatureConversionPortSoap11" name="TemperatureConversionPortSoap11">
+            <soap:address location="http://localhost:8080/ws"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

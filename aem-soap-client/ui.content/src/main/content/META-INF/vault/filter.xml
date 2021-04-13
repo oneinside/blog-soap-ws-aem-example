@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/conf/aem-soap-client" mode="merge"/>
+    <filter root="/content/aem-soap-client" mode="merge"/>
+    <filter root="/content/dam/aem-soap-client/asset.jpg" mode="merge"/>
+    <filter root="/content/experience-fragments/aem-soap-client" mode="merge"/>
+</workspaceFilter>

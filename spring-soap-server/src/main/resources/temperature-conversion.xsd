@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.one-inside.com/blog/soapserver/gen"
+           targetNamespace="http://www.one-inside.com/blog/soapserver/gen" elementFormDefault="qualified">
+
+    <xs:element name="convertCelsiusToFahrenheitRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="celsius" type="xs:float"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="convertCelsiusToFahrenheitResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="fahrenheit" type="xs:float"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="convertFahrenheitToCelsiusRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="fahrenheit" type="xs:float"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="convertFahrenheitToCelsiusResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="celsius" type="xs:float"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
